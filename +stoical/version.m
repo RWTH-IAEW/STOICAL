@@ -24,7 +24,7 @@ function varargout = version(varargin)
 
 % report STOICAL version
 
-v = struct('major', 0,'minor', 1,'bugfix', 0);
+v = struct('major', 0,'minor', 2,'bugfix', 0);
 
 if nargout
     varargout{1}=v;

@@ -54,7 +54,7 @@ close all;
     ResponseTimeseries = cell(1,N);
       
 %% ######### Get Data From Model Workspace #############################
-    STOICAL = getLabeledObjDataFromModelWorkspace(STOICAL_MODEL);
+    STOICAL = stoical.Aggregations.getLabeledObjDataFromModelWorkspace(STOICAL_MODEL);
     
 %% ############# LOOP ###################################################
 
@@ -67,25 +67,25 @@ for iRun = 1:N
 
 %% ############# Set Signals to Log  #########################
     % ------------- get actual log-status ------------- 
-        STOICAL.SignalDefinition = getLogStatus(STOICAL.SignalDefinition);
+        STOICAL.SignalDefinition = stoical.Signals.get.getLogStatus(STOICAL.SignalDefinition);
 
     % ------------- set log status ------------- 
         STOICAL.SignalDefinition.DoLog = ones(size(STOICAL.SignalDefinition.Handle,1),1);
-        setLogStatus( STOICAL.SignalDefinition );
+        stoical.Signals.set.setLogStatus( STOICAL.SignalDefinition );
 
 %% ############# Set Input Parameters of Model  #########################
 
     % ------------- Set all to default values first ------------- 
-        setParameterValues2Default(STOICAL);
+        stoical.Parameters.setParameterValues2Default(STOICAL);
     
     % ------------- set some explicitly ------------- 
-        setParameterValue('#Stimulus#Amplitude',num2str(parameter_StepAmpl(iRun)),STOICAL);
+        stoical.Parameters.setParameterValue('#Stimulus#Amplitude',num2str(parameter_StepAmpl(iRun)),STOICAL);
 
-        setParameterValue('#System#SystemGain',num2str(parameter_SysGain(iRun)),STOICAL);
+        stoical.Parameters.setParameterValue('#System#SystemGain',num2str(parameter_SysGain(iRun)),STOICAL);
         
-        setParameterValue('#System#w0',num2str(parameter_w0(iRun)),STOICAL);
+        stoical.Parameters.setParameterValue('#System#w0',num2str(parameter_w0(iRun)),STOICAL);
 
-        setParameterValue('#System#damp',num2str(parameter_zeta(iRun)),STOICAL);
+        stoical.Parameters.setParameterValue('#System#damp',num2str(parameter_zeta(iRun)),STOICAL);
         
         
 %% ############# Set Simulink Model Configuration & SimPowerSystems ######
@@ -94,13 +94,13 @@ for iRun = 1:N
     setActiveConfigSet(STOICAL_MODEL,ConfigurationSetNames{1});
 
 %% ############# Retrieve Current Configuration and Parametrization ######        
-    thisActiveSetting = getActiveConfigurationAndParameters( STOICAL_MODEL, STOICAL );
+    thisActiveSetting = stoical.Aggregations.getActiveConfigurationAndParameters( STOICAL_MODEL, STOICAL );
     
 %% ############# Configure Folders for Building and Caching ####################### 
-    setBuildAndCacheFolder( STOICAL_MODEL, thisActiveSetting );
+    stoical.InternalDataStorage.setBuildAndCacheFolder( STOICAL_MODEL, thisActiveSetting );
     
 %% ############# Create a unique name for the last simulation ###########
-    sim_name = getSimulationIdentifier( thisActiveSetting, iRun );
+    sim_name = stoical.Aggregations.getSimulationIdentifier( thisActiveSetting, iRun );
         
 %% ############# Perform Simulation #########################
 
@@ -142,8 +142,8 @@ for iRun = 1:N
     end
     
 %% ############# Retrieve the logged Signals from the Simulink result Object ######
-    [ Signal_Stimulus ] = getSignalFromSimulinkOutputObj( '#stimulus', STOICAL );
-    [ Signal_Response ] = getSignalFromSimulinkOutputObj( '#response', STOICAL );
+    [ Signal_Stimulus ] = stoical.Signals.get_results.getSignalFromSimulinkOutputObj( '#stimulus', STOICAL );
+    [ Signal_Response ] = stoical.Signals.get_results.getSignalFromSimulinkOutputObj( '#response', STOICAL );
     
     % temporarily save the signals
     ResponseTimeseries{iRun} = Signal_Response{1};

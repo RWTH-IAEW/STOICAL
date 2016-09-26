@@ -1,0 +1,7 @@
+job_runTAP:
+  script:
+    - matlab -noFigureWindow -nodesktop -nosplash -minimize -wait -r "runTAP" -logfile "output.log"
+    - prove testResults.tap
+  artifacts:
+    paths:
+      - testResults.tap

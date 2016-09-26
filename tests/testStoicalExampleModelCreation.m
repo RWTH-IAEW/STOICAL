@@ -27,20 +27,20 @@ end
 
 function testConfigureDefineModelHierarchie(testCase)
 STOICAL_MODEL = 'STOICAL_example_1_Step00_ExistingModel';
-analyse_ExistingLabelDefinitions
+stoical.prepare.label_definition.analyseExisting;
 testCase.assertEqual(possibleTokens, {});
 testCase.assertEqual(count, {});
 testCase.assertEqual(yesnostr, {});
 
 
 STOICAL_MODEL = 'STOICAL_example_1_Step01a_DefineModelHierarchie';
-analyse_ExistingLabelDefinitions
+stoical.prepare.label_definition.analyseExisting;
 testCase.assertEqual(possibleTokens, {'UNIT'});
 testCase.assertEqual(count, 2);
 testCase.assertEqual(yesnostr, {'yes'});
 
 STOICAL_MODEL = 'STOICAL_example_1_Step01b_DefineParameters';
-analyse_ExistingLabelDefinitions
+stoical.prepare.label_definition.analyseExisting;
 testCase.assertEqual(possibleTokens, {'PARAM'; 'UNIT'});
 testCase.assertEqual(count, [2;2]);
 testCase.assertEqual(yesnostr, {'yes'; 'yes'});
@@ -48,7 +48,7 @@ testCase.assertEqual(yesnostr, {'yes'; 'yes'});
 
 
 STOICAL_MODEL = 'STOICAL_example_1_Step01c_DefineSignals';
-analyse_ExistingLabelDefinitions
+stoical.prepare.label_definition.analyseExisting;
 testCase.assertEqual(possibleTokens, {'PARAM'; 'SIG'; 'UNIT'});
 testCase.assertEqual(count, [2;2;2]);
 testCase.assertEqual(yesnostr, {'yes'; 'yes'; 'yes'});
@@ -59,7 +59,7 @@ end
 function testConfigureSimulinkOutputSaveOptions(testCase)
 STOICAL_MODEL = 'STOICAL_example_1_Step01c_DefineSignals';
 
-configure_SimulinkOutputSaveOptions
+stoical.prepare.configure_simulink.setOutputSaveOptions
 
 testCase.verifyEqual(get_param(STOICAL_MODEL, 'SignalLoggingName'), 'STOICAL_LoggedSignals');
 end

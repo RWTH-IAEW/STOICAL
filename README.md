@@ -24,10 +24,12 @@ While not required by the terms of the license, we do request that publications 
 
 ## Publications
 
-1. T. Wippenbeck, R. Bertram, A. Schnettler, 
-["A toolbox for efficient parameter and structure variation of time domain power system simulation models in Simulink,"](http://dx.doi.org/10.1109/PTC.2015.7232829) 
-in PowerTech, 2015 IEEE Eindhoven, pp.1-6, June 29-July 2 2015
-(Digital Object Identifier: 10.1109/PTC.2015.7232829)
+[1] T. Wippenbeck, R. Bertram, A. Schnettler, 
+"A toolbox for efficient parameter and structure variation of time domain power system simulation models in Simulink,"
+in PowerTech, 2015 IEEE Eindhoven, pp.1-6, June 29-July 2 2015, 
+Access via 
+[IEEE](http://dx.doi.org/10.1109/PTC.2015.7232829) or 
+[RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2015-045648)
 
 ## Contact
 stoical@ifht.rwth-aachen.de

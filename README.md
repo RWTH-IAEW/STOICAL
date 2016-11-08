@@ -3,6 +3,9 @@ A Toolbox for Efficient Parameter and Structure Variation of Simulation Models i
 
 Copyright (C) 2015 Tilman Wippenbeck, Institute for High Voltage Technology, RWTH Aachen University
 
+## Toolbox description
+For details please see [wiki](https://git.rwth-aachen.de/IFHT/STOICAL/wikis/home)
+
 ## License
 STOICAL is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

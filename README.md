@@ -29,7 +29,8 @@ While not required by the terms of the license, we do request that publications 
 in PowerTech, 2015 IEEE Eindhoven, pp.1-6, June 29-July 2 2015, 
 Access via 
 [IEEE](http://dx.doi.org/10.1109/PTC.2015.7232829) or 
-[RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2015-045648)
+[RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2015-045648),
+Poster via [RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2016-092214)
 
 ## Contact
 stoical@ifht.rwth-aachen.de

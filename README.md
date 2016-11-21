@@ -32,6 +32,9 @@ Access via
 [RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2015-045648),
 Poster via [RWTH Aachen University Publications](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:hbz:82-rwth-2016-092214)
 
+## Financial Support
+This work has partially been sponsored by the German Federal Ministry for Economic Affairs and Energy under grant 03ET7506A
+
 ## Contact
 stoical@ifht.rwth-aachen.de
 
